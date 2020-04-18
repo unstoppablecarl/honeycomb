@@ -20,7 +20,9 @@
     "release": "git add --patch && standard-version --commit-all",
     "start": "npm run build && node --require ./dist/honeycomb.js",
     "test": "NODE_ENV=test nyc mocha --require test/config.js src --recursive",
-    "test:watch": "npm test -- --watch --bail"
+    "test:watch": "npm test -- --watch --bail",
+    "development": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch"
   },
   "author": "Abbe Keultjes <flauwekeul@gmail.com>",
   "license": "MIT",
@@ -59,7 +61,9 @@
     "test": "test"
   },
   "dependencies": {
-    "axis.js": "1.2.1"
+    "@svgdotjs/svg.js": "^3.0.16",
+    "axis.js": "1.2.1",
+    "laravel-mix": "^5.0.4"
   },
   "repository": {
     "type": "git",
